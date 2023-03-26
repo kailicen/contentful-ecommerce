@@ -5,6 +5,7 @@ import { createClient, Entry } from "contentful";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import useCart from "@/hooks/useCart";
 import { Service } from "..";
+import Skeleton from "@/components/Skeleton";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID!,
@@ -60,8 +61,11 @@ type Props = {
 };
 
 export default function ServiceScreen({ service }: Props) {
-  const { name, description, price, image, skills, type } = service.fields;
   const { addToCart } = useCart();
+
+  if (!service) return <Skeleton />;
+
+  const { name, description, price, image, skills, type } = service.fields;
 
   return (
     <div className="md: flex-col">
