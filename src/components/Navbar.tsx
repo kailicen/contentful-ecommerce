@@ -19,9 +19,9 @@ const Navbar: React.FC = () => {
             )}
           </Link>
 
-          <Link className="p-2" href="/login">
+          {/* <Link className="p-2" href="/login">
             Login
-          </Link>
+          </Link> */}
         </div>
       </nav>
     </header>
