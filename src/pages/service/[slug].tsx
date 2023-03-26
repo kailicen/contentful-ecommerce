@@ -59,7 +59,7 @@ type Props = {
   service: Service;
 };
 
-export default function ProductScreen({ service }: Props) {
+export default function ServiceScreen({ service }: Props) {
   const { name, description, price, image, skills, type } = service.fields;
   const { addToCart } = useCart();
 
@@ -74,7 +74,7 @@ export default function ProductScreen({ service }: Props) {
         <div className="md:col-span-2">
           <Image
             src={`https:${image.fields.file.url}`}
-            alt={name}
+            alt="image"
             width={640}
             height={640}
           ></Image>

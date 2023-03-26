@@ -1,6 +1,6 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-export default async (req, res) => {
+const createCheckoutSession = async (req, res) => {
   const { items } = req.body;
   console.log(items);
 
@@ -27,3 +27,5 @@ export default async (req, res) => {
 
   res.status(200).json({ id: session.id });
 };
+
+export default createCheckoutSession;
